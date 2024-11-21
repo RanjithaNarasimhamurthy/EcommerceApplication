@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:E_Commerce_Application.Converters"
+             x:Class="E_Commerce_Application.Views.DetailsPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Shell.NavBarIsVisible="False"
+             Title=""
+             BackgroundColor="#def9fa">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ByteArrayToImageSourceConverter x:Key="ByteArrayToImageSourceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back"  IconImageSource="back.png" Priority="0" Order="Primary" Clicked="onBackClicked"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ScrollView>
+
+        <StackLayout Padding="10">
+            <Grid Margin="0,10,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Source="right_arrow.png"
+                 Clicked="onBackClicked"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Start"
+                 BackgroundColor="Transparent"
+                 BorderColor="Black"
+                 WidthRequest="25"
+                 HeightRequest="25"
+                 Grid.Column="0" 
+                 RotationY="{OnPlatform Android=180,Default=0}"/>
+
+                <Label Text="Product Details" FontSize="24" FontAttributes="Bold" TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Grid.Column="1" />
+            </Grid>
+            <StackLayout Padding="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="Color:" FontAttributes="Bold" VerticalOptions="Center" Margin="5"/>
+                <Picker x:Name="colorPicker" 
+                        WidthRequest="120" ItemsSource="{Binding AvailableColors}" 
+                        SelectedItem="{Binding SelectedColor, Mode=TwoWay}" 
+                        
+                        />
+
+                <Label Text="Size:" FontAttributes="Bold" VerticalOptions="Center" Margin="5"/>
+                <Picker x:Name="sizePicker" 
+                        WidthRequest="120" ItemsSource="{Binding AvailableSizes}" 
+                        SelectedItem="{Binding SelectedSize, Mode=TwoWay}" />
+            </StackLayout>
+            <!-- Product Details -->
+
+            <CollectionView ItemsSource="{Binding FilteredProductImages}" BackgroundColor="Transparent">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Grid>
+                                <CarouselView x:Name="carouselView" ItemsSource="{Binding Images}" IsSwipeEnabled="true">
+                                    <CarouselView.ItemTemplate>
+                                        <DataTemplate>
+                                            <HorizontalStackLayout HorizontalOptions="Center">
+                                                <Image Source="{Binding Converter={StaticResource ByteArrayToImageSourceConverter}}"
+                                             WidthRequest="300" HeightRequest="300"/>
+                                            </HorizontalStackLayout>
+                                        </DataTemplate>
+                                    </CarouselView.ItemTemplate>
+                                </CarouselView>
+                                <Button Text="&#9664;" FontSize="30"
+                             HeightRequest="300" CornerRadius="2"
+                             HorizontalOptions="Start" VerticalOptions="Center" 
+                             Clicked="OnPreviousButtonClicked"
+                             BackgroundColor="Transparent"
+                             TextColor="black" 
+                             CommandParameter="{Binding Source={x:Reference carouselView}}"/>
+                                <Button Text="&#9654;" FontSize="30" 
+                             HeightRequest="300" CornerRadius="2"
+                             HorizontalOptions="End" VerticalOptions="Center" 
+                             BackgroundColor="Transparent"
+                             TextColor="Black"
+                             Clicked="OnNextButtonClicked"
+                             CommandParameter="{Binding Source={x:Reference carouselView}}"/>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="{Binding ProductDetails.strProductName}"  
+                   FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Text="{Binding ProductDetails.strBrand}" HorizontalOptions="Center" FontSize="Medium"/>
+            <CollectionView ItemsSource="{Binding FilteredProductImages}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout HorizontalOptions="End" Margin="5">
+                            <Label Text="{Binding dcProductPrice, StringFormat='₹{0:N}'}" 
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="{Binding ProductDetails.strProductDescription}" FontSize="15" Padding="10"/>
+
+
+            <CollectionView ItemsSource="{Binding FilteredProductImages}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+
+                            <HorizontalStackLayout>
+                                <Label Text="Product Color: " FontAttributes="Bold" />
+                                <Label Text="{Binding strProductColor}" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label Text="Price: " FontAttributes="Bold" />
+                                <Label Text="{Binding dcProductPrice, StringFormat='₹{0:N}'}" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label Text="Size: " FontAttributes="Bold" />
+                                <Label Text="{Binding strProductSize}" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label Text="Quantity In Stock: " FontAttributes="Bold" />
+                                <Label Text="{Binding intQuantityInStock}" />
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!--<Label Text="Product ID:" FontAttributes="Bold" />
+            <Label Text="{Binding ProductDetails.strProductId}" />
+
+            <Label Text="Sub Category ID:" FontAttributes="Bold" />
+            <Label Text="{Binding ProductDetails.intSubCategoryId}" />-->
+
+            <!--<Label Text="Vendor ID:" FontAttributes="Bold" />
+            <Label Text="{Binding ProductDetails.strProductVendorId}" />-->
+
+            <!--<Label Text="Product Name:" FontAttributes="Bold" />
+            <Label Text="{Binding ProductDetails.strProductName}" />-->
+
+            <!--<Label Text="Description:" FontAttributes="Bold" />-->
+
+            <!--<Label Text="Brand:" FontAttributes="Bold" />
+            <Label Text="{Binding ProductDetails.strBrand}" />
+
+            <Label Text="Product Images:" FontAttributes="Bold" />-->
+
+            <StackLayout Padding="5" Margin="20,10,20,0" >
+                <!-- Form with Border and Shadow -->
+                <Frame BorderColor="black" CornerRadius="10" Padding="10" BackgroundColor="White"
+               HasShadow="True" >
+                    <StackLayout>
+                        <!-- Form Header -->
+                        <Label Text="New Product Entry" FontSize="24" FontAttributes="Bold" 
+                               HorizontalOptions="Center" Margin="0,0,0,10" TextColor="DarkBlue"/>
+
+                        <Label Text="Size:" FontAttributes="Bold" />
+                        <Entry x:Name="SizeEntry" Placeholder="Enter Size">
+                            <Entry.Behaviors>
+                                <toolkit:TextValidationBehavior 
+            x:Name="SizeValidator"
+            MinimumLength="1"
+            Flags="ValidateOnAttaching,ValidateOnValueChanged"
+            />
+                            </Entry.Behaviors>
+                        </Entry>
+
+
+                        <Label Text="Price:" FontAttributes="Bold" />
+                        <Entry x:Name="PriceEntry" Placeholder="Enter Price" Keyboard="Numeric">
+                            <Entry.Behaviors>
+                                <toolkit:TextValidationBehavior 
+            x:Name="PriceValidator"
+            MinimumLength="1"
+            Flags="ValidateOnAttaching,ValidateOnValueChanged"
+            />
+                            </Entry.Behaviors>
+                        </Entry>
+
+                        <Label Text="Color:" FontAttributes="Bold" />
+                        <Entry x:Name="ColorEntry" Placeholder="Enter Color">
+                            <Entry.Behaviors>
+                                <toolkit:TextValidationBehavior 
+             x:Name="ColorValidator"
+             MinimumLength="1"
+             Flags="ValidateOnAttaching,ValidateOnValueChanged"
+             />
+                            </Entry.Behaviors>
+                        </Entry>
+
+                        <Label Text="Quantity:" FontAttributes="Bold" />
+                        <Entry x:Name="QuantityEntry" Placeholder="Enter Quantity" Keyboard="Numeric">
+                            <Entry.Behaviors>
+                                <toolkit:TextValidationBehavior 
+            x:Name="QuantityValidator"
+            MinimumLength="1"
+            Flags="ValidateOnAttaching,ValidateOnValueChanged"
+            />
+                            </Entry.Behaviors>
+                        </Entry>
+
+
+                        <Label Text="Product Images:" FontAttributes="Bold" TextColor="DarkBlue"/>
+                        <StackLayout Padding="10">
+                            <Frame Padding="1">
+                                <Button Text="Select Images" Clicked="OnSelectImagesClicked" 
+                                        FontFamily="bold" BackgroundColor="Transparent" TextColor="DarkBlue"/>
+                            </Frame>
+                            <CollectionView x:Name="ImagesCollectionView">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding ImageSource}" WidthRequest="100" HeightRequest="100"/>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+
+                        <!-- Submit and Back Buttons -->
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10">
+                            <Button Text="Submit" Clicked="OnSubmitClicked" BackgroundColor="DarkBlue" TextColor="White" Margin="5" Padding="25,0"/>
+                            <Button Text="Back to Home" Clicked="onBackClicked" BackgroundColor="White" BorderColor="black" TextColor="black" Margin="5"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

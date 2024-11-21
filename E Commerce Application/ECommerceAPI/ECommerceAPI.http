@@ -1,0 +1,31 @@
+﻿@ECommerceAPI_HostAddress = http://localhost:5135
+
+POST {{ECommerceAPI_HostAddress}}/api/user
+Content-Type: application/json
+
+{
+    "strName": "SitaRam",
+    "strGender": "F",
+    "strUserName": "sitaram@gmail.com",
+    "strPassword": "sitaram123",
+    "intContactNo": 123456789
+}
+
+###
+
+
+GET {{ECommerceAPI_HostAddress}}/api/user/string/string
+
+###
+
+GET {{ECommerceAPI_HostAddress}}/api/subcategories/byCategory/4
+
+###
+
+GET {{ECommerceAPI_HostAddress}}/api/user/Shailja@gmail.com/Shailja123
+
+###
+
+GET {{ECommerceAPI_HostAddress}}/api/categories
+
+###

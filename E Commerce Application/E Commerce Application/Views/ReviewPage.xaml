@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_Commerce_Application.Views.ReviewPage"
+             Title="Feedback"
+             BackgroundColor="#def9fa">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}"/>
+    </Shell.BackButtonBehavior>
+    <VerticalStackLayout>
+        <Label 
+            Text="Share your thoughts!"
+            FontSize="Large"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+
+
+        <!--<ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout Padding="10">
+                <Frame  BorderColor="Gray" CornerRadius="5" Padding="10">
+                    <Editor x:Name="feedbackEditor" Text="Enter your feedback here..."
+                       HeightRequest="200"
+                       BackgroundColor="White"
+                       VerticalOptions="FillAndExpand"
+                       TextColor="Black"
+                       FontSize="Medium"
+                       />
+                    </Frame>
+                </StackLayout>
+            </ScrollView>-->
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout Padding="10">
+                <Frame BorderColor="Gray" CornerRadius="5" Padding="10">
+                    <StackLayout>
+                        <Editor x:Name="feedbackEditor" Placeholder="Enter your feedback here..."
+                       HeightRequest="200"
+                       BackgroundColor="White"
+                       VerticalOptions="FillAndExpand"
+                       TextColor="Black"
+                       FontSize="Medium" />
+                        <!-- BoxView to hide the line -->
+                        <BoxView HeightRequest="1" Color="White" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+
+
+
+
+
+        <Button Text="Submit"
+                Clicked="OnSubmitClicked"
+                HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

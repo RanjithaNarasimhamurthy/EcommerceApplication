@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="E_Commerce_Application.Views.ProductViewPage"
+xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+xmlns:local="clr-namespace:E_Commerce_Application.Converters"
+xmlns:models="clr-namespace:E_Commerce_Application.Models"
+xmlns:viewmodel="clr-namespace:E_Commerce_Application.ViewModels"
+x:DataType="viewmodel:ProductDetailViewModel"
+Title="" Shell.NavBarIsVisible="False"
+BackgroundColor="#def9fa">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:ByteArrayToImageSourceConverter x:Key="ByteArrayToImageSourceConverter" />
+            <local:WishlistImageConverter x:Key="WishlistImageConverter" />
+            <local:RatingConverter x:Key="RatingConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--<ContentPage.Behaviors>
+<toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadProductByIdCommand}" />
+</ContentPage.Behaviors>-->
+    <Grid>
+        <ScrollView Grid.Row="0" Orientation="Vertical">
+            <VerticalStackLayout Spacing="1">
+                <StackLayout IsVisible="{Binding IsLoading}" VerticalOptions="Center" HorizontalOptions="Center">
+                    <ActivityIndicator IsRunning="{Binding IsLoading}" Color="Black" />
+                    <Label Text="Loading..." HorizontalOptions="Center" TextColor="Black" />
+                </StackLayout>
+                <CarouselView ItemsSource="{Binding DataImage}" IndicatorView="{x:Reference carouselIndicatorView}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate x:DataType="models:ProductImages">
+                            <ContentView>
+                                <StackLayout>
+                                    <Image Source="{Binding vbImage, Converter={StaticResource ByteArrayToImageSourceConverter}}" WidthRequest="400" HeightRequest="400" Aspect="AspectFill"/>
+                                </StackLayout>
+                            </ContentView>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <BoxView HeightRequest="5" Color="Transparent"/>
+                <IndicatorView x:Name="carouselIndicatorView" IndicatorColor="Gray" SelectedIndicatorColor="Black" IndicatorSize="10" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
+
+                <StackLayout Padding="15,5,15,5">
+                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding ProductDetail.strBrand}" FontAttributes="Bold" FontSize="15" TextColor="Black"
+HorizontalOptions="Start"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding ProductDetail.strProductName}" FontAttributes="Bold" FontSize="25" TextColor="Black"
+HorizontalOptions="Start"/>
+                    <BoxView HeightRequest="10" Color="Transparent"/>
+                    <Label Grid.Row="2" Grid.Column="0" Text="Price" TextColor="Black" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start"/>
+                    <Grid Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="{Binding ProductDetail.dcMRP, StringFormat='₹{0:N2}'}" TextColor="#6E6E6E" TextDecorations="Strikethrough" FontSize="20" Margin="0,0,10,5" IsVisible="{Binding IsMRPVisible}"/>
+                        <Label Grid.Column="1" Text="{Binding SelectedProductPrice, StringFormat='₹{0:N2}'}" TextColor="Black" FontSize="20"/>
+                        <Label Grid.Column="2"/>
+                        <Label Grid.Column="3" FontSize="18" Text="{Binding AverageRating}" HorizontalOptions="End" Margin="0,5,33,0"/>
+                        <Image Grid.Column="4" Source="filled_star" HeightRequest="25" WidthRequest="25" HorizontalOptions="End"/>
+                    </Grid>
+                </StackLayout>
+                <BoxView HeightRequest="10" Color="Transparent"/>
+
+                <Grid>
+                    <Label Padding="15,0" Grid.Column="0" Text="Size and Color" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
+                </Grid>
+                <BoxView HeightRequest="10" Color="Transparent"/>
+                <Grid Padding="15,0,15,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Picker x:Name="SizePicker" Title="Select Size"
+ItemsSource="{Binding ProductSizes}" SelectedItem="{Binding SelectedProductSize}"
+SelectedIndexChanged="SizePicker_SelectedIndexChanged"
+Grid.Column="0" FontSize="18" HorizontalOptions="Center"
+VerticalOptions="CenterAndExpand"/>
+                    <Picker x:Name="ColorPicker" Title="Select Color" FontSize="18"
+ItemsSource="{Binding ProductColors}" SelectedItem="{Binding SelectedProductColor}"
+SelectedIndexChanged="ColorPicker_SelectedIndexChanged"
+Grid.Column="1" HorizontalOptions="Center"
+VerticalOptions="CenterAndExpand"/>
+                </Grid>
+                <BoxView HeightRequest="15" Color="Transparent"/>
+                <Label Grid.Row="3" Text="Description" Padding="15,5,15,5" FontAttributes="Bold" FontSize="18"/>
+                <Label Grid.Row="4" Text="{Binding ProductDetail.strProductDescription}" Padding="15,5,15,5" FontSize="14"/>
+                <BoxView HeightRequest="10" Color="Transparent"/>
+
+                <Grid ColumnDefinitions="*, *">
+                    <Label Grid.Row="5" Text="Reviews" Padding="15,5,15,5" FontAttributes="Bold" FontSize="18"/>
+                    <Label Grid.Column="1" Text="View all" Padding="15,5,15,5" HorizontalOptions="End" VerticalOptions="End" TextDecorations="Underline">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnFeedbackClicked" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <CollectionView ItemsSource="{Binding Feedbacks}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Grid RowDefinitions="Auto,Auto" >
+                                    <Image Grid.Row="0" Grid.Column="0" Source="login_5" WidthRequest="24" HeightRequest="24" VerticalOptions="Start" HorizontalOptions="Start" Margin="15,0,0,0"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding strUserName}" HorizontalOptions="Start" FontAttributes="Bold" Margin="60,0,0,0"/>
+                                    <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Horizontal" VerticalOptions="Center" Margin="15,0,15,5" HorizontalOptions="End">
+                                        <Image WidthRequest="15" HeightRequest="15" Source="{Binding intRating, Converter={StaticResource RatingConverter}, ConverterParameter=1}" />
+                                        <Image WidthRequest="15" HeightRequest="15" Source="{Binding intRating, Converter={StaticResource RatingConverter}, ConverterParameter=2}" />
+                                        <Image WidthRequest="15" HeightRequest="15" Source="{Binding intRating, Converter={StaticResource RatingConverter}, ConverterParameter=3}" />
+                                        <Image WidthRequest="15" HeightRequest="15" Source="{Binding intRating, Converter={StaticResource RatingConverter}, ConverterParameter=4}" />
+                                        <Image WidthRequest="15" HeightRequest="15" Source="{Binding intRating, Converter={StaticResource RatingConverter}, ConverterParameter=5}" />
+                                    </StackLayout>
+                                    <Label Grid.Row="1" FontSize="14" Padding="15,0" LineHeight="1.2" TextColor="Black" Text="{Binding strReview}"/>
+                                    <Label Grid.Row="2" Text="{Binding dtUpdated_on, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" TextColor="Gray" Margin="15,25,0,0"/>
+                                </Grid>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <BoxView HeightRequest="10" Color="Transparent"/>
+                <Button Grid.Row="6" Grid.ColumnSpan="2"
+CornerRadius="0"
+Text="Add to Cart"
+BackgroundColor="#0abef5"
+TextColor="Black" FontAttributes="Bold" FontSize="15"
+VerticalOptions="End"
+Command="{Binding AddToCartCommand}"/>
+            </VerticalStackLayout>
+        </ScrollView>
+        <ImageButton Source="right_arrow"
+VerticalOptions="Start"
+HorizontalOptions="Start"
+Margin="5"
+RotationY="{OnPlatform Android=180,Default=0}">
+            <ImageButton.Behaviors>
+                <toolkit:IconTintColorBehavior TintColor="Black"/>
+            </ImageButton.Behaviors>
+            <ImageButton.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnRightArrowTapped"/>
+            </ImageButton.GestureRecognizers>
+        </ImageButton>
+        <ImageButton Source="{Binding ProductDetail.bitIsWishlist, Converter={StaticResource WishlistImageConverter}}"
+VerticalOptions="Start"
+HorizontalOptions="End"
+Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductDetailViewModel}}, Path=ToggleWishlistCommand}"
+CommandParameter="{Binding ProductDetail.strProductId}"
+WidthRequest="35"
+HeightRequest="35"
+Margin="5"
+RotationY="{OnPlatform Android=180, Default=0}"
+Clicked="OnHeartClicked">
+        </ImageButton>
+    </Grid>
+</ContentPage>

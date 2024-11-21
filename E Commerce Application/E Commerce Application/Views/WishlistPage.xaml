@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_Commerce_Application.Views.WishlistPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:models="clr-namespace:E_Commerce_Application.Models"
+             xmlns:viewmodel="clr-namespace:E_Commerce_Application.ViewModels"
+             xmlns:local="clr-namespace:E_Commerce_Application.Converters"
+             Title="Wishlist"
+             BackgroundColor="#def9fa">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:ByteArrayToImageSourceConverter x:Key="ByteArrayToImageSourceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Appearing"
+                                        Command="{Binding LoadWishlistProductsCommand}" />
+    </ContentPage.Behaviors>
+    <ScrollView Padding="15">
+        <VerticalStackLayout Spacing="10">
+            <!--<Grid ColumnDefinitions="*,*">
+                <Label Grid.Row="0" Grid.Column="0" Text="My Wishlist" VerticalOptions="End" 
+                       FontSize="20" FontAttributes="Bold"/>
+                <ImageButton Grid.Row="0" Grid.Column="1" Source="home" VerticalOptions="Start" 
+                             HorizontalOptions="End" WidthRequest="25" HeightRequest="25" 
+                             Margin="5" RotationY="{OnPlatform Android=180,Default=0}">
+                    <ImageButton.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnHomeTapped"/>
+                    </ImageButton.GestureRecognizers>
+                </ImageButton>
+            </Grid>-->
+            <StackLayout IsVisible="{Binding IsLoading}" VerticalOptions="Center" HorizontalOptions="Center">
+                <ActivityIndicator IsRunning="{Binding IsLoading}" Color="Black" />
+                <Label Text="Loading..." HorizontalOptions="Center" TextColor="Black" />
+            </StackLayout>
+            <Label Text="No Wishlisted Products. Try Adding"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   Margin="0,250,0,0"
+                   TextColor="Gray"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{Binding HasWishlistProducts}" Value="True">
+                        <Setter Property="IsVisible" Value="False" />
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding HasWishlistProducts}" Value="False">
+                        <Setter Property="IsVisible" Value="True" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+
+            <FlexLayout BindableLayout.ItemsSource="{Binding Products}" Wrap="Wrap">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:ProductResponse">
+                        <Border StrokeShape="RoundRectangle 10"
+                                StrokeThickness="0"
+                                FlexLayout.Basis="50%"
+                                BackgroundColor="MintCream"
+                                Padding="10"
+                                Margin="5">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:WishlistProductViewModel}}, Path=ProductImageTappedCommand}"
+                                CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+                            <Border.Shadow>
+                                <Shadow Brush="Gray" Offset="10,10"/>
+                            </Border.Shadow>
+                            <Grid RowDefinitions="auto,auto,auto,auto" RowSpacing="1">
+                                <ImageButton Source="heartselected"
+                                             Grid.Row="0"
+                                             HeightRequest="25"
+                                             WidthRequest="25"
+                                             HorizontalOptions="End"
+                                             VerticalOptions="Start"
+                                             BackgroundColor="Transparent" 
+                                             Clicked="OnHeartIconTapped"/>
+                                <FlexLayout Grid.Row="1"
+                                            BindableLayout.ItemsSource="{Binding ProductImages}"
+                                            Wrap="Wrap"
+                                            Direction="Row">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate x:DataType="models:ProductImages">
+                                            <ImageButton Source="{Binding vbImage, Converter={StaticResource ByteArrayToImageSourceConverter}}"
+                                                         HeightRequest="150"
+                                                         WidthRequest="150">
+                                            </ImageButton>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </FlexLayout>
+                                <Label Grid.Row="2"
+                                       Text="{Binding strProductName}"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="Center"
+                                       FontSize="15" FontAttributes="Bold" />
+                                <Grid Grid.Row="3" ColumnDefinitions="*,*">
+                                    <Label Grid.Column="0"
+                                           Text="{Binding dcMRP, StringFormat='${0:N2}'}"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="Center" />
+                                    <HorizontalStackLayout Grid.Column="1"
+                                                           HorizontalOptions="End"
+                                                           Spacing="2"
+                                                           VerticalOptions="Center">
+                                        <Label FontSize="15" Text="{Binding AverageRating}" HorizontalOptions="End" Margin="0,5,3,0"/>
+                                        <Image Source="filled_star" HeightRequest="15" WidthRequest="15" HorizontalOptions="End"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

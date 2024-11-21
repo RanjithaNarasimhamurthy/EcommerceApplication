@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_Commerce_Application.Views.OrderTrackingPage"
+             xmlns:converters="clr-namespace:E_Commerce_Application.Converters"
+            xmlns:vm="clr-namespace:E_Commerce_Application.ViewModels"
+            Title="Order Tracking"
+            BackgroundColor="#def9fa">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}"/>
+    </Shell.BackButtonBehavior>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBooleanConverter x:Key="InverseBoolConverter" />
+            <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <StackLayout IsVisible="{Binding IsLoaded}">
+            <StackLayout
+                Margin="10,10,10,0"
+                HeightRequest="10"
+                Orientation="Horizontal">
+            </StackLayout>
+
+            <ScrollView Margin="10,10,10,0">
+                <StackLayout Padding="10,0,10,20">
+                    <CollectionView
+                        ItemsSource="{Binding TrackingSteps}"
+                        SelectionMode="None">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame
+                                        Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="0"
+                                        HeightRequest="20"
+                                        WidthRequest="20"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Start"
+                                        CornerRadius="10"
+                                        BackgroundColor="{Binding IsCompleted, Converter={StaticResource BoolToColorConverter}}">
+                                        <Image Source="tick.png" IsVisible="{Binding IsCompleted}" WidthRequest="12" HeightRequest="12" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Frame>
+
+                                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        WidthRequest="2"
+                                        HeightRequest="100"
+                                        Margin="0,18,0,0"
+                                        VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="Grey"
+                                        IsVisible="{Binding IsLastStep, Converter={StaticResource InverseBoolConverter}}" />
+
+                                    <StackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Padding="10,0">
+                                        <Label
+                                            FontSize="Title"
+                                            Text="{Binding StepName}"
+                                            TextColor="Black" />
+                                        <Label
+                                            FontSize="Subtitle"
+                                            Text="{Binding StepDescription}"
+                                            TextColor="Gray"
+                                            LineBreakMode="WordWrap" />
+                                    </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:E_Commerce_Application.Converters"
+             x:Class="E_Commerce_Application.Views.ProductsPage"
+             Shell.NavBarIsVisible="False"
+             Title=""
+             BackgroundColor="#def9fa">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ByteArrayToImageSourceConverter x:Key="ByteArrayToImageSourceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView Orientation="Vertical">
+                        
+        <StackLayout Margin="10,0,10,10">
+            <Grid HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Spacing="10" Padding="10">
+                    <Label Text="Logout" VerticalOptions="Center" TextColor="Black" FontSize="Medium"/>
+                    <Image Source="logout.png" Aspect="AspectFill" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Logout_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <!--<Frame Margin="20" Padding="1" BorderColor="Black" CornerRadius="5" HorizontalOptions="Start">-->
+                <HorizontalStackLayout Margin="20" Padding="1">
+                <Button Text="Add Product" BackgroundColor="DarkBlue"
+                        Clicked="Add_Product" FontSize="18" FontFamily="bold"/>
+                </HorizontalStackLayout>
+            <!--</Frame>-->
+            </Grid>
+
+
+
+            <!-- Filters Section -->
+            <StackLayout Padding="10">
+                <!-- Filters and Apply Button -->
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Spacing="10">
+                    <!-- Category Picker -->
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="5">
+                        <Label Text="Category:" FontAttributes="Bold" VerticalOptions="End"/>
+                        <Picker x:Name="CategoryPicker" SelectedIndexChanged="OnCategorySelected" WidthRequest="100">
+                            <Picker.ItemDisplayBinding>
+                                <Binding Path="strCategoryName" />
+                            </Picker.ItemDisplayBinding>
+                        </Picker>
+                    </VerticalStackLayout>
+
+                    <!-- Sub Category Picker -->
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="5">
+                        <Label Text="Sub Category:" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <Picker x:Name="SubCategoryPicker" WidthRequest="120">
+                            <Picker.ItemDisplayBinding>
+                                <Binding Path="strSubCategoryName" />
+                            </Picker.ItemDisplayBinding>
+                        </Picker>
+                    </VerticalStackLayout>
+
+                    <!-- Apply Button -->
+                    <Button Text="Apply" BackgroundColor="DarkBlue" FontAttributes="Bold"
+                            Clicked="OnApplyFilter" VerticalOptions="Center" Margin="5,0,0,0" Padding="25,0"/>
+
+                    <ImageButton Source="refresh.png" VerticalOptions="Center"
+                                 WidthRequest="25" HeightRequest="30" Clicked="onRefreshClicked" />
+
+                </HorizontalStackLayout>
+            </StackLayout>
+
+
+
+            <Grid x:Name="overlay"
+                  Opacity="1"
+                  IsVisible="False"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="Fill">
+                <ActivityIndicator IsRunning="True" Margin="0,40,0,0"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"  
+                                   BackgroundColor="Transparent"
+                                   Color="#005298"/>
+            </Grid>
+
+            <Frame>
+                <ListView x:Name="ProductListView"
+                          HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10" BackgroundColor="white">
+                                    <Image Source="{Binding vbImage, Converter={StaticResource ByteArrayToImageSourceConverter}}"  HeightRequest="300" WidthRequest="300" />
+
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding strProductId}" HorizontalTextAlignment="Center"/>
+                                        <Label Text="{Binding strProductName}" HorizontalTextAlignment="Center"/>
+                                        <Label Text="{Binding strBrand}" FontFamily="bold" FontSize="18" HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Button Text="Details" Clicked="Button_Clicked" CommandParameter="{Binding .}" FontFamily="bold" BackgroundColor="#71797E" Margin="0,5,5,5" WidthRequest="150"/>
+                                        <Button Text="Delete" Clicked="Delete_Clicked" CommandParameter="{Binding .}" FontFamily="bold" BackgroundColor="red" Margin="5,5,15,5" WidthRequest="150"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

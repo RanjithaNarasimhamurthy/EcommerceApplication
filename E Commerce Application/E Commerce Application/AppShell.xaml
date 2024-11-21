@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="E_Commerce_Application.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:E_Commerce_Application"
+    xmlns:views="clr-namespace:E_Commerce_Application.Views"
+    xmlns:viewmodel="clr-namespace:E_Commerce_Application.ViewModels"
+    FlyoutBehavior="Flyout">
+    <!--BackgroundColor="#0abef5"-->
+    <!--Shell.FlyoutBehavior="Disabled"-->
+
+    
+
+
+
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage" 
+        FlyoutItemIsVisible="False"/>
+
+
+    <FlyoutItem Title="Categories" Icon="bxs_category.svg">
+        <ShellContent Route="Category" ContentTemplate="{DataTemplate views:Category}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="My Orders" Icon="order.png">
+        <ShellContent
+    Route="OrderPage"
+    ContentTemplate="{DataTemplate views:OrderPage}">
+            <!--<ShellContent.BindingContext>
+                <viewmodel:OrderViewModel />
+            </ShellContent.BindingContext>-->
+        </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem Title="My Profile" Icon="userimage.png">
+        <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate views:ProfilePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="My Address" Icon="addresses.png">
+        <ShellContent Route="AddressPage" ContentTemplate="{DataTemplate views:AddressPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="All Products" Icon="producticon.png">
+        <ShellContent Route="ProductPage" ContentTemplate="{DataTemplate views:ProductPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Cart" Icon="shoppingcart.png">
+        <ShellContent Route="CartView" ContentTemplate="{DataTemplate views:CartView}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Wishlist" Icon="heart.png">
+        <ShellContent Route="WishlistPage" ContentTemplate="{DataTemplate views:WishlistPage}" />
+    </FlyoutItem>
+
+    <MenuItem Text="Logout" IconImageSource="logout.png" Command="{Binding LogoutCommand}" />
+
+
+    <ShellContent
+    Title="Products"
+    ContentTemplate="{DataTemplate views:ProductsPage}"
+    Route="ProductsPage" 
+    Shell.NavBarIsVisible="False"
+    FlyoutItemIsVisible="False"/>
+    <ShellContent
+    Title="AddPage"
+    ContentTemplate="{DataTemplate views:AddPage}"
+    Route="AddPage"
+    Shell.NavBarIsVisible="False"
+    FlyoutItemIsVisible="False"/>
+    <ShellContent
+    Title="DetailsPage"
+    ContentTemplate="{DataTemplate views:DetailsPage}"
+    Route="DetailsPage" 
+    Shell.NavBarIsVisible="False"
+    FlyoutItemIsVisible="False"/>
+
+</Shell>

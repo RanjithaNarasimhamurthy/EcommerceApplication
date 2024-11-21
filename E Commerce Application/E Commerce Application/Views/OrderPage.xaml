@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_Commerce_Application.Views.OrderPage"
+             xmlns:models="clr-namespace:E_Commerce_Application.Models"
+             xmlns:converters="clr-namespace:E_Commerce_Application.Converters"
+             Title="My Orders"
+             BackgroundColor="#def9fa">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImageSourceConverter" />
+            <converters:InverseBooleanConverter x:Key="InverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--<VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>-->
+    <ScrollView>
+    <VerticalStackLayout Padding="10">
+            <StackLayout IsVisible="{Binding IsLoading}" VerticalOptions="Center" HorizontalOptions="Center">
+                <ActivityIndicator IsRunning="{Binding IsLoading}" Color="Black" />
+                <Label Text="Loading..." HorizontalOptions="Center" TextColor="Black" />
+            </StackLayout>
+            <Label 
+    Text="No orders found"
+    FontSize="Large"
+    FontAttributes="Bold"
+    Margin="0,250,0,0"
+    TextColor="Gray"
+    HorizontalOptions="CenterAndExpand"
+    VerticalOptions="CenterAndExpand"
+    IsVisible="{Binding HasOrderItems, Converter={StaticResource InverseBoolConverter}}" />
+            <CollectionView ItemsSource="{Binding Orders}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                    CornerRadius="10"
+                    BorderColor="LightGray"
+                    Padding="5"
+                    Margin="10"
+                    HasShadow="True">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOrderTapped" />
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Margin="10,10,10,0">
+                                <Label 
+                                Text="{Binding OrderId, StringFormat='Order ID: {0}'}"
+                                FontSize="Medium"
+                                FontAttributes="Bold"
+                                VerticalOptions="Start" 
+                                HorizontalOptions="Start"/>
+                            </Grid>
+                            <Grid Padding="5" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Frame CornerRadius="10"
+                                BorderColor="LightGray"
+                                Padding="10"
+                                Margin="5,5,10,5"
+                                HasShadow="True"
+                                   Grid.RowSpan="2">
+                                    <StackLayout Orientation="Horizontal">
+                                            <Image Source="{Binding FirstProductImage, Converter={StaticResource ByteArrayToImageSourceConverter}}"
+                                    WidthRequest="100"
+                                    HeightRequest="100"
+                                    Margin="0,0,10,0"/>
+                                        <!--<Label FontSize="Medium"
+                                               FontAttributes="Bold"
+                                    VerticalOptions="End" 
+                                    HorizontalOptions="End"
+                                    Text="{Binding NumberOfItems, StringFormat='(+{0})'}">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding NumberOfItems}" Value="0">
+                                                    <Setter Property="IsVisible" Value="False" />
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>-->
+                                    </StackLayout>
+                                </Frame>
+
+
+                                <Label 
+                            Text="{Binding FirstProductName}"
+                            FontSize="Medium"
+                            FontAttributes="Bold"        
+                            VerticalOptions="End" 
+                            HorizontalOptions="Start"
+                            Grid.Row="0" 
+                            Grid.Column="1"/>
+
+                                <Label FontSize="Medium"
+                                       FontAttributes="Bold"
+                            VerticalOptions="Start" 
+                            HorizontalOptions="Start"
+                                Grid.Row="1" 
+                                Grid.Column="1"  
+                            Text="{Binding NumberOfItems, StringFormat='( +{0} items )'}">
+
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding NumberOfItems}" Value="0">
+                                            <Setter Property="IsVisible" Value="False" />
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+
+                                
+                            </Grid>
+                            <Grid Grid.Row="2" Margin="10,10,10,5">
+                                <Label 
+                                Text="{Binding dtOrderDate, StringFormat='Order Placed On: {0:dd-MM-yyyy}'}"
+                                    FontAttributes="Bold"
+                                VerticalOptions="Start" 
+                                HorizontalOptions="Start"/>
+                            </Grid>
+                            <Grid Grid.Row="3" Margin="10,10,10,5">
+                                <Label 
+                                Text="{Binding strPaymentMethod, StringFormat='Payment Method: {0}'}"
+                                    FontAttributes="Bold"
+                                VerticalOptions="Start" 
+                                HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

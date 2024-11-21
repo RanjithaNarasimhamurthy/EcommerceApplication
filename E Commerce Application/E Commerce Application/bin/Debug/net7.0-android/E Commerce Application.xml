@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>E Commerce Application</name>
+    </assembly>
+    <members>
+        <member name="T:E_Commerce_Application.ViewModels.AddressViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.AddressViewModel.Addresses">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.AddressViewModel.addresses"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.AddressViewModel.Addr">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.AddressViewModel.addr"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.AddressViewModel.Addre">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.AddressViewModel.addre"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.AdminPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.AdminPageViewModel.SelectedVendor">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.AdminPageViewModel._selectedVendor"/>
+        </member>
+        <member name="F:E_Commerce_Application.ViewModels.AdminPageViewModel.itemTappedCommand">
+            <summary>The backing field for <see cref="P:E_Commerce_Application.ViewModels.AdminPageViewModel.ItemTappedCommand"/>.</summary>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.AdminPageViewModel.ItemTappedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:E_Commerce_Application.ViewModels.AdminPageViewModel.OnItemTapped(E_Commerce_Application.Models.Vendor)"/>.</summary>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.BaseViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.BaseViewModel.IsBusy">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.BaseViewModel._isBusy"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.BaseViewModel.Title">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.BaseViewModel._title"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.CategoryViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.CategoryViewModel.Categories">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.CategoryViewModel._categories"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.FeedbackViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.FeedbackViewModel.ProductId">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.FeedbackViewModel.productId"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.LoginPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.LoginPageViewModel.UserName">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.LoginPageViewModel._userName"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.LoginPageViewModel.Password">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.LoginPageViewModel._password"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.LoginPageViewModel.RememberMe">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.LoginPageViewModel._rememberMe"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.LoginPageViewModel.IsPassword">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.LoginPageViewModel._isPassword"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.LoginPageViewModel.EyeIconSource">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.LoginPageViewModel._eyeIconSource"/>
+        </member>
+        <member name="F:E_Commerce_Application.ViewModels.LoginPageViewModel.loginCommand">
+            <summary>The backing field for <see cref="P:E_Commerce_Application.ViewModels.LoginPageViewModel.LoginCommand"/>.</summary>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.LoginPageViewModel.LoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:E_Commerce_Application.ViewModels.LoginPageViewModel.Login"/>.</summary>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.OrderItemViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.OrderItemViewModel.OrderItems">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.OrderItemViewModel._orderItems"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.OrderViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.OrderViewModel.Orders">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.OrderViewModel._orders"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.OrderViewModel.HasOrderItems">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.OrderViewModel._hasOrderItems"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.OrderViewModel.IsLoading">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.OrderViewModel._isLoading"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.ProductBySubCategoryViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.ProductBySubCategoryViewModel.Products">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.ProductBySubCategoryViewModel._products"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.ProductBySubCategoryViewModel.WishlistProductIds">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.ProductBySubCategoryViewModel._wishlistProductIds"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.ProductBySubCategoryViewModel.IsLoading">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.ProductBySubCategoryViewModel._isLoading"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.ProductDetailViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.ProductDetailViewModel.Products">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.ProductDetailViewModel._products"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.ProductDetailViewModel.WishlistProductIds">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.ProductDetailViewModel._wishlistProductIds"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.ProductDetailViewModel.IsLoading">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.ProductDetailViewModel._isLoading"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.ProductsViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.ProductsViewModel.Products">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.ProductsViewModel._products"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.ProductsViewModel.WishlistProductIds">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.ProductsViewModel._wishlistProductIds"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.ProductsViewModel.IsLoading">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.ProductsViewModel._isLoading"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.SignUpViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.Name">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._name"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.Email">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._email"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.Phone">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._phone"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.Password">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._password"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.ConfirmPassword">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._confirmPassword"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.EyeIconSource">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._eyeIconSource"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.ConfirmEyeIconSource">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._confirmEyeIconSource"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.IsPassword">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._isPassword"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.IsConfirmPassword">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._isConfirmPassword"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.SelectedRole">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._selectedRole"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.Roles">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._roles"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.BRNo">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._BRNo"/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SignUpViewModel.GSTNo">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SignUpViewModel._GSTNo"/>
+        </member>
+        <member name="M:E_Commerce_Application.ViewModels.SignUpViewModel.OnSelectedRoleChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:E_Commerce_Application.ViewModels.SignUpViewModel.SelectedRole"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:E_Commerce_Application.ViewModels.SignUpViewModel.SelectedRole"/> is changed.</remarks>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.SubCategoryViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.SubCategoryViewModel.SubCategories">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.SubCategoryViewModel._subCategories"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.UserViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.UserViewModel.User">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.UserViewModel._user"/>
+        </member>
+        <member name="T:E_Commerce_Application.ViewModels.WishlistProductViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:E_Commerce_Application.ViewModels.WishlistProductViewModel.IsLoading">
+            <inheritdoc cref="F:E_Commerce_Application.ViewModels.WishlistProductViewModel._isLoading"/>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Addresses">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Addresses" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Addr">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Addr" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Addre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Addre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedVendor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedVendor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Categories">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Categories" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProductId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProductId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RememberMe">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RememberMe" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EyeIconSource">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EyeIconSource" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.OrderItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "OrderItems" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Orders">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Orders" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HasOrderItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HasOrderItems" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Products">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Products" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.WishlistProductIds">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "WishlistProductIds" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Phone">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Phone" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConfirmEyeIconSource">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConfirmEyeIconSource" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedRole">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedRole" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Roles">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Roles" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.BRNo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "BRNo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.GSTNo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "GSTNo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SubCategories">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SubCategories" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.User">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "User" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Addresses">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Addresses" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Addr">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Addr" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Addre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Addre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedVendor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedVendor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Categories">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Categories" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProductId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProductId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RememberMe">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RememberMe" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EyeIconSource">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EyeIconSource" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.OrderItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "OrderItems" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Orders">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Orders" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HasOrderItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HasOrderItems" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Products">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Products" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.WishlistProductIds">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "WishlistProductIds" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Phone">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Phone" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConfirmEyeIconSource">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConfirmEyeIconSource" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedRole">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedRole" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Roles">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Roles" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.BRNo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "BRNo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.GSTNo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "GSTNo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SubCategories">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SubCategories" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.User">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "User" generated properties.</summary>
+        </member>
+    </members>
+</doc>

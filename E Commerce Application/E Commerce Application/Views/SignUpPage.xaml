@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_Commerce_Application.Views.SignUpPage"
+             Title="SignUpPage"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <Grid BackgroundColor="#def9fa">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Path Fill="#0abef5" Data="m0.30001,0l449,0l0,128.48327c-122.5,64.30167 -332.5,65.89076 -449,7.2429c0,-45.25313 0,-90.47304 0,-135.72617z"/>
+
+            <StackLayout Margin="0,100,0,0" HorizontalOptions="Center">
+                <Frame BackgroundColor="white" HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0">
+                    <Image Source="login_5.png" Aspect="AspectFill" Margin="3"/>
+                </Frame>
+                <StackLayout Margin="20,40,0,0">
+                    <Label Text="Shop with ease. Sign up today!" FontSize="Medium" FontAttributes="Bold" TextColor="#000" Margin="0,20" HorizontalOptions="Center"/>
+
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Margin="30">
+                <Frame BackgroundColor="#e6ffff" BorderColor="#0abef5" HorizontalOptions="FillAndExpand" CornerRadius="30" Padding="20" Margin="0,0,0,20">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,5">
+                            <Image Source="role.png" HeightRequest="20" WidthRequest="20" Margin="5,0,10,0" />
+                            <Picker ItemsSource="{Binding Roles}" SelectedItem="{Binding SelectedRole}" Title="Select Role" FontSize="Medium" HorizontalOptions="FillAndExpand" TitleColor="#808080"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Margin="0,5">
+                            <Image Source="userimage.png" HeightRequest="20" WidthRequest="20" Margin="5,0,10,0" />
+                            <Entry Text="{Binding Name}" Placeholder="Full Name" FontSize="Medium" HorizontalOptions="FillAndExpand" PlaceholderColor="#808080"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,5">
+                            <Image Source="email_icon.png" HeightRequest="20" WidthRequest="20" Margin="5,0,10,0" />
+                            <Entry Text="{Binding Email}" Placeholder="Email" FontSize="Medium" HorizontalOptions="FillAndExpand" PlaceholderColor="#808080"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,5">
+                            <Image Source="telephone.png" HeightRequest="20" WidthRequest="20" Margin="5,0,10,0" />
+                            <Entry Text="{Binding Phone}" Placeholder="Phone" FontSize="Medium" HorizontalOptions="FillAndExpand" PlaceholderColor="#808080"/>
+                        </StackLayout>
+
+                        
+
+                        <!-- Business Reg No and GSTIN fields -->
+                        <!--<StackLayout Orientation="Horizontal" Margin="0,5" IsVisible="{Binding IsVendor}">
+                        <Image Source="checkbox.png" HeightRequest="20" WidthRequest="20" Margin="5,0,10,0" />
+                        <Entry Text="{Binding BRNo}" Placeholder="Business Registration No" FontSize="Medium" HorizontalOptions="FillAndExpand" PlaceholderColor="#808080"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0,5" IsVisible="{Binding IsVendor}">
+                        <Image Source="checkbox.png" HeightRequest="20" WidthRequest="20" Margin="5,0,10,0" />
+                        <Entry Text="{Binding GSTNo}" Placeholder="GSTIN" FontSize="Medium" HorizontalOptions="FillAndExpand" PlaceholderColor="#808080"/>
+                    </StackLayout>-->
+                        <StackLayout Orientation="Horizontal" Margin="0,5" VerticalOptions="CenterAndExpand">
+                            <Image Source="padlock.png" HeightRequest="20" WidthRequest="20" Margin="5,0,10,0" VerticalOptions="Center" />
+
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <Entry x:Name="passwordEntry" IsPassword="{Binding IsPassword}" 
+                    Text="{Binding Password}" Placeholder="Password" 
+                    FontSize="Medium" PlaceholderColor="#808080" 
+                    Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                                <ImageButton Source="{Binding EyeIconSource}" 
+                    Command="{Binding TogglePasswordVisibilityCommand}" 
+                    BackgroundColor="Transparent" WidthRequest="25" 
+                    HeightRequest="20" HorizontalOptions="End" 
+                    VerticalOptions="Center" Grid.Column="1" />
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Margin="0,5" VerticalOptions="CenterAndExpand">
+                            <Image Source="checkbox.png" HeightRequest="20" WidthRequest="20" Margin="5,0,10,0" VerticalOptions="Center" />
+
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <Entry x:Name="confirmPasswordEntry" IsPassword="{Binding IsConfirmPassword}" 
+                        Text="{Binding ConfirmPassword}" Placeholder="Confirm Password" 
+                        FontSize="Medium" PlaceholderColor="#808080" 
+                        Grid.Column="0" VerticalOptions="CenterAndExpand" />
+
+                                <ImageButton Source="{Binding ConfirmEyeIconSource}" 
+                        Command="{Binding ToggleConfirmPasswordVisibilityCommand}" 
+                        BackgroundColor="Transparent" WidthRequest="25" 
+                        HeightRequest="20" HorizontalOptions="End" 
+                        VerticalOptions="Center" Grid.Column="1" />
+                            </Grid>
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding IsVendor}">
+                            <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                                <Image Source="brno.png" HeightRequest="30" WidthRequest="20" Margin="5,10,10,0" />
+                                <Entry Text="{Binding BRNo}" Placeholder="Business Registration No" FontSize="Medium" HorizontalOptions="FillAndExpand" PlaceholderColor="#808080"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                                <Image Source="identification.png" HeightRequest="30" WidthRequest="20" Margin="5,10,10,0" />
+                                <Entry Text="{Binding GSTNo}" Placeholder="GSTIN" FontSize="Medium" HorizontalOptions="FillAndExpand" PlaceholderColor="#808080"/>
+                            </StackLayout>
+                            <!--<Entry Text="{Binding BRNo}" Placeholder="Business Registration No" FontSize="Medium" PlaceholderColor="#808080" />
+                        <Entry Text="{Binding GSTNo}" Placeholder="GSTIN" FontSize="Medium" PlaceholderColor="#808080" />-->
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
+
+                <Button Text="Sign Up" BackgroundColor="#0abef5" TextColor="White" FontSize="Medium" FontAttributes="Bold" CornerRadius="30" WidthRequest="200"  Margin="10,20,10,0" Command="{Binding SignUpCommand}"/>
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="2" HorizontalOptions="Center" Margin="0,20">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Already have an account?" FontSize="Small" TextColor="#6E6E6E"/>
+                </StackLayout>
+
+                <Button Text="Sign In" TextColor="#0abef5" FontSize="Small" FontAttributes="Bold" BackgroundColor="Transparent"
+          Clicked="SignInButton_Clicked" Padding="0"/>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

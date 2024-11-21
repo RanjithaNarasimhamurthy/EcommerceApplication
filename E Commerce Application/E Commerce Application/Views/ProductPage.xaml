@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_Commerce_Application.Views.ProductPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:converters="clr-namespace:E_Commerce_Application.Converters"
+             xmlns:models="clr-namespace:E_Commerce_Application.Models"
+             xmlns:viewmodel="clr-namespace:E_Commerce_Application.ViewModels"
+             Title="Products"
+             BackgroundColor="#def9fa">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="white_cart.png" 
+                  Order="Primary" 
+                  Clicked="OnShoppingCartClicked"/>
+        <ToolbarItem IconImageSource="white_heart.png" 
+                  Order="Primary" 
+                  Clicked="OnWishlistClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:ByteArrayToImageSourceConverter x:Key="ByteArrayToImageSourceConverter" />
+            <converters:WishlistImageConverter x:Key="WishlistImageConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView Padding="15">
+        <VerticalStackLayout Spacing="10">
+            <!--<Grid RowDefinitions="auto,auto,auto" VerticalOptions="StartAndExpand">
+                <Image Grid.Row="0" Grid.Column="0" Source="menu.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="Start">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnMenuTapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Grid.Row="0" Grid.Column="1" Source="shoppingcart.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="End" VerticalOptions="End"/>
+                <BoxView HeightRequest="15" BackgroundColor="Transparent" Color="Transparent"/>
+                <Label Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0" Text="Hello Rosalia," VerticalOptions="Start" FontSize="25" FontAttributes="Bold"/>
+                <Label Grid.Row="2" Grid.ColumnSpan="2" Margin="0,5,0,0" Text="Welcome to Clothing Shop" VerticalOptions="Start" FontSize="15" TextColor="DarkGray"
+                           FontAttributes="Bold"/>
+            </Grid>-->
+
+            <BoxView HeightRequest="5" BackgroundColor="Transparent"  Color="Transparent"/>
+            <Grid ColumnDefinitions="*, auto" ColumnSpacing="10">
+                <Border Stroke="MintCream" StrokeThickness="1" BackgroundColor="MintCream" StrokeShape="RoundRectangle 20">
+                    <StackLayout Grid.Column="0" Orientation="Horizontal" Padding="5,5">
+                        <Entry Placeholder="Search here" BackgroundColor="Transparent" FontSize="15" HorizontalOptions="FillAndExpand" TextChanged="OnSearchTextChanged" PlaceholderColor="#808080"/>
+                    </StackLayout>
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Opacity="0.8" Offset="5,5"/>
+                    </Border.Shadow>
+                </Border>
+                <ImageButton Aspect="AspectFit" Grid.Column="1" CornerRadius="5" WidthRequest="35" HeightRequest="35"
+                 Source="microphone" HorizontalOptions="End"
+                 BackgroundColor="Transparent"/>
+            </Grid>
+
+            <BoxView HeightRequest="5" BackgroundColor="Transparent" Color="Transparent"/>
+
+            <Grid ColumnDefinitions="*, *">
+                <Label Grid.Column="0" Text="Choose Brand" VerticalOptions="End"
+                       FontSize="20" FontAttributes="Bold"/>
+                <!--<Label Grid.Column="1" Text="View all" HorizontalOptions="End" 
+                       VerticalOptions="End" TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ViewAllBrandsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>-->
+            </Grid>
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always">
+                <FlexLayout BindableLayout.ItemsSource="{Binding DistinctBrands}" Direction="Row" Wrap="NoWrap">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="25" HasShadow="True"
+                       BackgroundColor="MintCream" Padding="15" Margin="2"
+                       HeightRequest="50" WidthRequest="100">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.BrandSelectedCommand}"
+                                                CommandParameter="{Binding}" Tapped="Frame_Tapped" />
+                                </Frame.GestureRecognizers>
+                                <Label Text="{Binding}" FontFamily="Verdana" x:Name="LabelFrame"
+                           VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
+                           LineBreakMode="TailTruncation" />
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </ScrollView>
+
+            <BoxView HeightRequest="5" BackgroundColor="Transparent" Color="Transparent"/>
+            <Grid ColumnDefinitions="*, *">
+                <Label Grid.Column="0" 
+                       Text="New Arrivals"
+                       VerticalOptions="End"
+                       FontSize="20"
+                       FontAttributes="Bold"/>
+                <Label Grid.Column="1"  x:Name="ViewAllLabel"
+                       Text="View all"
+                       HorizontalOptions="End"
+                       VerticalOptions="End"
+                       TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnViewAllTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <StackLayout IsVisible="{Binding IsLoading}" VerticalOptions="Center" HorizontalOptions="Center">
+                <ActivityIndicator IsRunning="{Binding IsLoading}" Color="Black" />
+                <Label Text="Loading..." HorizontalOptions="Center" TextColor="Black" />
+            </StackLayout>
+            <Label Text="No Products Found."
+       FontSize="16"
+       FontAttributes="Bold"
+       Margin="0,250,0,0"
+       TextColor="Gray"
+       HorizontalOptions="CenterAndExpand"
+       VerticalOptions="CenterAndExpand">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{Binding HasProducts}" Value="True">
+                        <Setter Property="IsVisible" Value="False" />
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding HasProducts}" Value="False">
+                        <Setter Property="IsVisible" Value="True" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+            <FlexLayout BindableLayout.ItemsSource="{Binding Products}"  Wrap="Wrap">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:ProductResponse">
+                        <Border StrokeShape="RoundRectangle 10"
+                                StrokeThickness="0"
+                                FlexLayout.Basis="50%"
+                                BackgroundColor="MintCream"
+                                Padding="10"
+                                Margin="5">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=ProductImageTappedCommand}"
+                                          CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+                            <Border.Shadow>
+                                <Shadow Brush="Gray" Offset="10,10"/>
+                            </Border.Shadow>
+                            <Grid RowDefinitions="auto,auto,auto,auto"
+                                  RowSpacing="1">
+                                <ImageButton Source="{Binding bitIsWishlist, Converter={StaticResource WishlistImageConverter}}"
+                                             Grid.Row="0"
+                                             HeightRequest="25"
+                                             WidthRequest="25"
+                                             Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=ToggleWishlistCommand}"
+                                             CommandParameter="{Binding strProductId}"
+                                             HorizontalOptions="End"
+                                             VerticalOptions="Start"
+                                             BackgroundColor="Transparent"
+                                             Clicked="OnHeartIconTapped"/>
+
+                                <!--<ImageButton HeightRequest="25"
+                                 WidthRequest="25"
+                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=BindingContext.ToggleWishlistCommand}"
+                                 CommandParameter="{Binding}"
+                                 HorizontalOptions="End"
+                                 VerticalOptions="Start"
+                                 BackgroundColor="Transparent">
+                                    <ImageButton.Source>
+                                        <MultiBinding Converter="{StaticResource WishlistImageConverter}">
+                                            <Binding Path="strProductId"/>
+                                            <Binding Path="BindingContext.WishlistProductIds" Source="{RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}"/>
+                                        </MultiBinding>
+                                    </ImageButton.Source>
+                                </ImageButton>-->
+
+
+
+                                <FlexLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding ProductImages}" 
+                                Wrap="Wrap" Direction="Row">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate x:DataType="models:ProductImages">
+                                            <ImageButton Source="{Binding vbImage, Converter={StaticResource ByteArrayToImageSourceConverter}}"
+                                             HeightRequest="150" 
+                                             WidthRequest="150">
+                                            </ImageButton>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </FlexLayout>
+                                <Label Grid.Row="2"
+                                       Text="{Binding strProductName}"
+                                       HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                                       FontSize="12"/>
+
+                                <Grid Grid.Row="3" ColumnDefinitions="*,*">
+                                    <Label Grid.Column="0" Text="{Binding dcMRP,StringFormat='₹{0:N2}'}"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="Center"/>
+                                    <HorizontalStackLayout Grid.Column="1" 
+                            HorizontalOptions="End" 
+                            Spacing="2" 
+                            VerticalOptions="Center">
+                                        <Label FontSize="12" Text="{Binding AverageRating}" FontAttributes="Bold" HorizontalOptions="End" Margin="0,5,5,0"/>
+
+                                        <Image Source="star" HeightRequest="15" WidthRequest="15">
+                                            <Image.Behaviors>
+                                                <toolkit:IconTintColorBehavior TintColor="DarkGoldenrod"/>
+                                            </Image.Behaviors>
+                                        </Image>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

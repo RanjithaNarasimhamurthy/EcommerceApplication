@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_Commerce_Application.Views.FeedbackListPage"
+             xmlns:converters="clr-namespace:E_Commerce_Application.Converters"
+             Shell.BackgroundColor="#def9fa"
+             Shell.ForegroundColor="Black">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:RatingConverter x:Key="RatingConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding BackButtonTappedCommand}">
+            <BackButtonBehavior.TextOverride>
+                <OnPlatform x:TypeArguments="x:String">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android"/>
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </BackButtonBehavior.TextOverride>
+        </BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <StackLayout Padding="10" BackgroundColor="#def9fa">
+        <Label Text="Customer Reviews" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,10"/>
+        <CollectionView ItemsSource="{Binding Feedbacks}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5" BorderColor="LightGray" CornerRadius="10" HasShadow="True">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                    <Frame BackgroundColor="white" HeightRequest="28" WidthRequest="28" CornerRadius="14" Padding="0">
+                                        <Image Source="login_5.png" HeightRequest="24" WidthRequest="24" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Frame>
+                                    <Label Text="{Binding strUserName}" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0,0,0"/>
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="End">
+                                    <Image WidthRequest="18" HeightRequest="18" Source="{Binding intRating, Converter={StaticResource RatingConverter}, ConverterParameter=1}" />
+                                    <Image WidthRequest="18" HeightRequest="18" Source="{Binding intRating, Converter={StaticResource RatingConverter}, ConverterParameter=2}" />
+                                    <Image WidthRequest="18" HeightRequest="18" Source="{Binding intRating, Converter={StaticResource RatingConverter}, ConverterParameter=3}" />
+                                    <Image WidthRequest="18" HeightRequest="18" Source="{Binding intRating, Converter={StaticResource RatingConverter}, ConverterParameter=4}" />
+                                    <Image WidthRequest="18" HeightRequest="18" Source="{Binding intRating, Converter={StaticResource RatingConverter}, ConverterParameter=5}" />
+                                </StackLayout>
+                            </Grid>
+
+                            <Label Text="{Binding strReview}" FontSize="Small" Margin="0,10,0,0"/>
+                            <Label Text="{Binding dtUpdated_on, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" TextColor="Gray" Margin="0,5,0,0"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

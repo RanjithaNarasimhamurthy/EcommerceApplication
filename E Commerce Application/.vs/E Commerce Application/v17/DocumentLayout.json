@@ -1,0 +1,496 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\views\\category.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\views\\category.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\views\\category.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\views\\category.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\views\\forgotpasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\views\\forgotpasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\views\\subcategorygrocery.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\views\\subcategorygrocery.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\views\\subcategoryshop.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\views\\subcategoryshop.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\views\\subcategoryshop.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\views\\subcategoryshop.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|c:\\users\\hp\\downloads\\e commerce application (1)\\e commerce application\\e commerce application\\views\\product.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48EB5AEF-056E-47E1-BFF5-DAF0170A2990}|E Commerce Application\\E Commerce Application.csproj|solutionrelative:e commerce application\\views\\product.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 73,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:144:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:142:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:145:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:146:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:147:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:148:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:149:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:143:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3fd5e0cc-709a-4f8c-94c3-7f0f8dff5bb2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:20:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:23:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:26:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:29:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:32:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:36:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:39:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:42:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:45:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:48:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:19:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:22:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:21:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:24:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:27:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:30:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:33:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:18:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "E Commerce Application\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\LoginPage.xaml.cs",
+              "RelativeToolTip": "E Commerce Application\\LoginPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:25:31.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ForgotPasswordPage.xaml",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\ForgotPasswordPage.xaml",
+              "RelativeDocumentMoniker": "E Commerce Application\\Views\\ForgotPasswordPage.xaml",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\ForgotPasswordPage.xaml",
+              "RelativeToolTip": "E Commerce Application\\Views\\ForgotPasswordPage.xaml",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAUwBsAAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T05:23:00.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "E Commerce Application\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\LoginPage.xaml",
+              "RelativeToolTip": "E Commerce Application\\LoginPage.xaml",
+              "ViewState": "AQIAAF0AAAAAAAAAAAArwG4AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T05:18:02.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SubCategoryShop.xaml",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\SubCategoryShop.xaml",
+              "RelativeDocumentMoniker": "E Commerce Application\\Views\\SubCategoryShop.xaml",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\SubCategoryShop.xaml",
+              "RelativeToolTip": "E Commerce Application\\Views\\SubCategoryShop.xaml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAACwAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T05:07:08.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Category.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\Category.xaml.cs",
+              "RelativeDocumentMoniker": "E Commerce Application\\Views\\Category.xaml.cs",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\Category.xaml.cs",
+              "RelativeToolTip": "E Commerce Application\\Views\\Category.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:07:08.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "E Commerce Application\\AppShell.xaml.cs",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\AppShell.xaml.cs",
+              "RelativeToolTip": "E Commerce Application\\AppShell.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:07:08.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Category.xaml",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\Category.xaml",
+              "RelativeDocumentMoniker": "E Commerce Application\\Views\\Category.xaml",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\Category.xaml",
+              "RelativeToolTip": "E Commerce Application\\Views\\Category.xaml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAEQAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T05:07:08.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SubCategoryShop.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\SubCategoryShop.xaml.cs",
+              "RelativeDocumentMoniker": "E Commerce Application\\Views\\SubCategoryShop.xaml.cs",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\SubCategoryShop.xaml.cs",
+              "RelativeToolTip": "E Commerce Application\\Views\\SubCategoryShop.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:07:08.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "E Commerce Application\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\MauiProgram.cs",
+              "RelativeToolTip": "E Commerce Application\\MauiProgram.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBYAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:07:08.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SubCategoryGrocery.xaml",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\SubCategoryGrocery.xaml",
+              "RelativeDocumentMoniker": "E Commerce Application\\Views\\SubCategoryGrocery.xaml",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\SubCategoryGrocery.xaml",
+              "RelativeToolTip": "E Commerce Application\\Views\\SubCategoryGrocery.xaml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAAwAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T05:07:08.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\AppShell.xaml",
+              "RelativeDocumentMoniker": "E Commerce Application\\AppShell.xaml",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\AppShell.xaml",
+              "RelativeToolTip": "E Commerce Application\\AppShell.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T05:07:08.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Product.xaml",
+              "DocumentMoniker": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\Product.xaml",
+              "RelativeDocumentMoniker": "E Commerce Application\\Views\\Product.xaml",
+              "ToolTip": "C:\\Users\\hp\\Downloads\\E Commerce Application (1)\\E Commerce Application\\E Commerce Application\\Views\\Product.xaml",
+              "RelativeToolTip": "E Commerce Application\\Views\\Product.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T05:07:08.679Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

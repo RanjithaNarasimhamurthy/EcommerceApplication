@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_Commerce_Application.Views.SubCategoryGrocery"
+             Title="Grocery"
+             BackgroundColor="#def9fa">
+    <!--<VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>-->
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}"/>
+    </Shell.BackButtonBehavior>
+
+    <Grid Padding="20" RowSpacing="20" ColumnSpacing="20" Margin="10,20,10,50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="White" x:Name="frame1" Padding="5" CornerRadius="5" HasShadow="True" HeightRequest="200">
+            <StackLayout Spacing="10"  VerticalOptions="Center">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="NavigateToProductframe1Page" />
+                </StackLayout.GestureRecognizers>
+                <Image Source="{Binding SubCategories[0].strImage}" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center" />
+                <Label Text="{Binding SubCategories[0].strSubCategoryName}" HorizontalOptions="Center" />
+            </StackLayout>
+        </Frame>
+
+
+        <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="White" x:Name="frame2" Padding="5" CornerRadius="5" HasShadow="True" HeightRequest="200">
+            <StackLayout Spacing="10"  VerticalOptions="Center">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="NavigateToProductframe2Page" />
+                </StackLayout.GestureRecognizers>
+                <Image Source="{Binding SubCategories[1].strImage}" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center" />
+                <Label Text="{Binding SubCategories[1].strSubCategoryName}" HorizontalOptions="Center" />
+            </StackLayout>
+        </Frame>
+
+
+        <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="White" x:Name="frame3" Padding="5" CornerRadius="5" HasShadow="True" HeightRequest="200">
+            <StackLayout Spacing="10"  VerticalOptions="Center">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="NavigateToProductframe3Page"/>
+                </StackLayout.GestureRecognizers>
+                <Image Source="{Binding SubCategories[2].strImage}" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center" />
+                <Label Text="{Binding SubCategories[2].strSubCategoryName}" HorizontalOptions="Center"  />
+            </StackLayout>
+        </Frame>
+
+
+        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" Padding="5" x:Name="frame4" CornerRadius="5" HasShadow="True"  HeightRequest="200">
+            <StackLayout Spacing="10"  VerticalOptions="Center">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="NavigateToProductframe4Page"/>
+                </StackLayout.GestureRecognizers>
+                <Image Source="{Binding SubCategories[3].strImage}" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center" />
+                <Label Text="{Binding SubCategories[3].strSubCategoryName}" HorizontalOptions="Center" />
+            </StackLayout>
+        </Frame>
+
+
+        <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="White" Padding="5" x:Name="frame5" CornerRadius="5" HasShadow="True"  HeightRequest="200">
+            <StackLayout Spacing="10"  VerticalOptions="Center">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="NavigateToProductframe5Page"/>
+                </StackLayout.GestureRecognizers>
+                <Image Source="{Binding SubCategories[4].strImage}" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center"/>
+                <Label Text="{Binding SubCategories[4].strSubCategoryName}" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="White" Padding="5" x:Name="frame6" CornerRadius="5" HasShadow="True"  HeightRequest="200">
+            <StackLayout Spacing="10"  VerticalOptions="Center">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="NavigateToProductframe6Page"/>
+                </StackLayout.GestureRecognizers>
+                <Image Source="{Binding SubCategories[5].strImage}" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center"/>
+                <Label Text="{Binding SubCategories[5].strSubCategoryName}" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Frame>
+        <!--<Image Source="fruits.jpg" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="2" Grid.Column="1" />-->
+    </Grid>
+
+
+</ContentPage>

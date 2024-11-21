@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:E_Commerce_Application.Converters"
+             x:Class="E_Commerce_Application.Views.AdminPage"
+             BackgroundColor="#def9fa"
+             Shell.BackgroundColor="#def9fa"
+             Shell.ForegroundColor="Black"
+             Shell.FlyoutBehavior="Disabled">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:IndexConverter x:Key="IndexConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False"/>
+    </Shell.BackButtonBehavior>
+
+
+    <Shell.TitleView>
+      
+        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Spacing="10" Padding="10">
+            <Label Text="Logout" VerticalOptions="Center" TextColor="Black" FontSize="Medium"/>
+            <Image Source="logout.png" Aspect="AspectFill" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" />
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Logout_Tapped" />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+    </Shell.TitleView>
+
+
+    <ScrollView>
+        <StackLayout Padding="10" BackgroundColor="#def9fa">
+            <Frame BackgroundColor="#0abef5" CornerRadius="0" Padding="20" Margin="0,20,0,0">
+                <Label Text="Vendor List" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" TextColor="White" />
+            </Frame>
+            <Frame BackgroundColor="#e6ffff" BorderColor="#0abef5" CornerRadius="0" Padding="10" >
+                <StackLayout>
+                    <Label x:Name="NoVendorsLabel" Text="No vendors found" IsVisible="False" FontSize="Medium" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <CollectionView x:Name="VendorCollectionView" ItemsSource="{Binding Vendors}" SelectionMode="Single">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="10" ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding ., Converter={StaticResource IndexConverter}, ConverterParameter={x:Reference VendorCollectionView}}" VerticalOptions="Center" Grid.Column="0" FontSize="Medium" />
+                                    <Label Text="{Binding strName}" VerticalOptions="Center" Grid.Column="1" FontSize="Medium"/>
+                                    <Button Text="View" Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ItemTappedCommand}" CommandParameter="{Binding .}" Grid.Column="2" HorizontalOptions="End" 
+                                        BackgroundColor="#0abef5" 
+                                        TextColor="White" 
+                                        FontAttributes="Bold" 
+                                        CornerRadius="5"/>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

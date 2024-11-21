@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_Commerce_Application.Views.VendorDetails"
+             Shell.BackgroundColor="#def9fa"
+             Shell.ForegroundColor="Black"
+             Shell.FlyoutBehavior="Disabled">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}">
+            <BackButtonBehavior.TextOverride>
+                <OnPlatform x:TypeArguments="x:String">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android"/>
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </BackButtonBehavior.TextOverride>
+        </BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <ScrollView>
+        <StackLayout Padding="10" BackgroundColor="#def9fa">
+            <Frame BackgroundColor="#0abef5" CornerRadius="0" Padding="20" Margin="0,20,0,0">
+                <Label Text="Vendor Details" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" TextColor="White" />
+            </Frame>
+
+            <Frame BackgroundColor="#e6ffff" BorderColor="#0abef5" CornerRadius="0" Padding="20">
+                <Grid ColumnSpacing="10" RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Name:" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" TextColor="#0abef5" FontSize="Medium" VerticalOptions="Center"/>
+                    <Label Text="{Binding SelectedVendor.strName}" Grid.Row="0" Grid.Column="1" TextColor="Black" FontSize="Medium" VerticalOptions="Center"/>
+
+                    <Label Text="Email:" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" TextColor="#0abef5" FontSize="Medium"/>
+                    <Label Text="{Binding SelectedVendor.strUserName}" Grid.Row="1" Grid.Column="1" TextColor="Black" FontSize="Medium"/>
+
+                    <Label Text="Contact No:" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" TextColor="#0abef5" FontSize="Medium"/>
+                    <Label Text="{Binding SelectedVendor.longContactNo}" Grid.Row="2" Grid.Column="1" TextColor="Black" FontSize="Medium"/>
+
+                    <Label Text="BR No:" FontAttributes="Bold" Grid.Row="3" Grid.Column="0" TextColor="#0abef5" FontSize="Medium"/>
+                    <Label Text="{Binding SelectedVendor.strBRNo}" Grid.Row="3" Grid.Column="1" TextColor="Black" FontSize="Medium"/>
+
+                    <Label Text="GST No:" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" TextColor="#0abef5" FontSize="Medium"/>
+                    <Label Text="{Binding SelectedVendor.strGSTNo}" Grid.Row="4" Grid.Column="1" TextColor="Black" FontSize="Medium"/>
+                </Grid>
+            </Frame>
+            <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,10,0,0">
+                <Button Text="Approve" 
+                            Command="{Binding ApproveVendorCommand}" 
+                            CommandParameter="{Binding SelectedVendor}" 
+                            BackgroundColor="Green" 
+                            TextColor="White" 
+                            FontAttributes="Bold" 
+                            CornerRadius="5" 
+                            HorizontalOptions="FillAndExpand"/>
+                <Button Text="Reject" 
+                            Command="{Binding RejectVendorCommand}" 
+                            CommandParameter="{Binding SelectedVendor}" 
+                            BackgroundColor="Red" 
+                            TextColor="White" 
+                            FontAttributes="Bold" 
+                            CornerRadius="5" 
+                            HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+        </StackLayout>
+
+        
+    </ScrollView>
+</ContentPage>
